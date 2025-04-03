@@ -1,4 +1,6 @@
-<!-- Sexto exercicio, neste exercicio vamos ver o primeiro site de fato, aqui existe um arquivo CSS, HTML e um PHP. Neles foram configurados para que o usuário digite seu nome, Sobrenome e Idade possuindo um pequeno controle de excessões. Além disso, vimos de uma maneira melhor como puxar uma informação de um HTML, para o PHP e utilizá-la. -->
+<!-- Sexto exercicio, neste exercicio vamos ver o primeiro site de fato, aqui existe um arquivo CSS, HTML e um PHP. 
+Neles foram configurados para que o usuário digite seu nome, Sobrenome e Idade possuindo um pequeno controle de excessões. 
+Além disso, vimos de uma maneira melhor como puxar uma informação de um HTML, para o PHP e utilizá-la. -->
 
 <!DOCTYPE html>
 <html lang="pt-br">
