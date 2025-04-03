@@ -18,7 +18,7 @@ Para rodar os exercícios localmente, siga os passos abaixo:
      
 2. **Clone este repositório**  
    ```bash
-   git clone https://github.com/seu-usuario/listaPHP.git
+   git clone https://github.com/joaokrv/listaPHP.git
    
 3. **Coloque os arquivos no diretório do servidor local**  
   Se estiver usando o XAMPP, mova a pasta do repositório para: C:\xampp\htdocs\php 
