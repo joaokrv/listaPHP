@@ -21,17 +21,17 @@ Para rodar os exercícios localmente, siga os passos abaixo:
    git clone https://github.com/seu-usuario/listaPHP.git
    
 3. **Coloque os arquivos no diretório do servidor local**  
-  Se estiver usando o XAMPP, mova a pasta do repositório para: C:\xampp\htdocs\listaPHP 
+  Se estiver usando o XAMPP, mova a pasta do repositório para: C:\xampp\htdocs\php 
 
 5. **Inicie o servidor Apache**
   Abra o XAMPP e inicie o Apache.
 
 6. **Acesse no navegador**
-   http://localhost/listaPHP/
+   http://localhost/php/
    
 # 📖 Estrutura do Repositório
 ## Cada pasta contém exercícios ou desafios separados por tópicos:
-listaPHP/<br>
+localhost/php/<br>
 │── exercicios/<br>
 │   ├── exercicio1.php<br>
 │   ├── exercicio2.php<br>
