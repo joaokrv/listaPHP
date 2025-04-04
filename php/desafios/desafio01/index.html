@@ -1,0 +1,29 @@
+<!-- O primeiro desafio foi criar um site que mostre o número antecessor e o sucessor, no qual o usuário digita o número na tela de interface e é redirecionado para a seguinte mostrando o resultado. Para isso foi necessário colocar um input, assim como puxar suas informações com o GET no códgio em PHP -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 01 - PHP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <header>
+        <h1>Formulario em PHP</h1><hr>
+        <h2 id="apresente">Calcular Antecessor e Sucessor</h2><br>
+    </header>
+    
+    <section>
+        <form action="resposta.php" method="get">
+            <label for="num">Numero:</label>
+            <input type="number" name="numero" id="numero" required>
+            <input type="submit" value="Calcular">
+        </form>
+    </section>
+
+</body>
+
+</html>
