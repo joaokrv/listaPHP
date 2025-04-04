@@ -42,7 +42,8 @@
             echo "<h2>Resultado</h2>";
             echo "<p>Cotação atual: " . numfmt_format_currency($padrao, $cotacao, "USD" . "</p>");
             echo "<p>Data da cotação: $dataFormatada</p>";
-            echo "<p>Seus " . numfmt_format_currency($padrao, $valor, "BRL") . " equivalem a aproximadamente <strong style='font-size: 24px;'>" . numfmt_format_currency($padrao, $valorConvertido, "USD") . "</strong></p>";
+            echo "<p>Seus " . numfmt_format_currency($padrao, $valor, "BRL") . " equivalem a aproximadamente <strong style='font-size: 22px;'>" . numfmt_format_currency($padrao, $valorConvertido, "USD") . "</strong></p>";
+            echo "<p>A cotação foi retirada do site: <a href=$url target=_blank>API AwesomeAPI</a></p>";
            
            //var_dump($_GET) -> mostra todos os dados; $_REQUEST -> Junção do $_GET / $_POST / $_COOKIES
         ?>
