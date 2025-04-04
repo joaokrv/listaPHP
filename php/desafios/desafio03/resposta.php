@@ -25,27 +25,45 @@
                 die("<h3 style='color: red;'>Erro: Insira um valor válido!</h3><a href='index.html'>Voltar</a");
             }   
 
-            // Busca a cotação atual do dólar usando a API AwesomeAPI
-            $url = "https://economia.awesomeapi.com.br/json/last/USD-BRL";
-            $response = file_get_contents($url); // Obtém os dados JSON da API
-            $jsonCotacao = json_decode($response, true); // Converte JSON para array associativo
-            $dataCotacao = $jsonCotacao["USDBRL"]["create_date"]; // Pega a data da cotação
+            // Busca a cotação atual do dólar usando os dados abertos do Banco Central
+            $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=\'04-01-2025\'&@dataFinalCotacao=\'04-30-2025\'&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,dataHoraCotacao';
+            
+            // Obtém os dados JSON da API
+            $response = file_get_contents($url); 
+            
+            // Converte JSON para array associativo
+            $jsonCotacao = json_decode($response, true); 
+            
+            // Pega a data da cotação
+            $dataCotacao = $jsonCotacao["value"]["0"]["dataHoraCotacao"]; 
+            
             // Converte a data para o formato brasileiro
-            $dataFormatada = DateTime::createFromFormat("Y-m-d H:i:s", $dataCotacao)->format("d/m/Y \à\s H:i");
-            $cotacao = $jsonCotacao["USDBRL"]["bid"]; // Obtém a cotação atual do dólar            
+            $dataObj = DateTime::createFromFormat("Y-m-d H:i:s.u", $dataCotacao);
 
+            // Verifica se a conversão foi bem-sucedida
+            if ($dataObj === false) {
+                die("<h2>Erro ao processar a data da cotação.</h2>");
+            }
+
+            // Formata a data corretamente para o formato brasileiro
+            $dataFormatada = $dataObj->format("d/m/Y \à\s H:i");
+            
+            // Obtém a cotação atual do dólar
+            $cotacao = $jsonCotacao["value"]["0"]["cotacaoCompra"];             
+
+            //Faz a conversão
             $valorConvertido = $valor/$cotacao;
 
             //Formata o valor convertido para pt_BR
             $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
             
             echo "<h2>Resultado</h2>";
-            echo "<p>Cotação atual: " . numfmt_format_currency($padrao, $cotacao, "USD" . "</p>");
+            echo "<p>Cotação atual: <strong style='font-size: 20px;'>" . numfmt_format_currency($padrao, $cotacao, "USD") . "</strong></p>";
             echo "<p>Data da cotação: $dataFormatada</p>";
             echo "<p>Seus " . numfmt_format_currency($padrao, $valor, "BRL") . " equivalem a aproximadamente <strong style='font-size: 22px;'>" . numfmt_format_currency($padrao, $valorConvertido, "USD") . "</strong></p>";
-            echo "<p>A cotação foi retirada do site: <a href=$url target=_blank>API AwesomeAPI</a></p>";
-           
-           //var_dump($_GET) -> mostra todos os dados; $_REQUEST -> Junção do $_GET / $_POST / $_COOKIES
+            echo "<p>A cotação foi retirada do site: <a href=https://dadosabertos.bcb.gov.br/dataset/dolar-americano-usd-todos-os-boletins-diarios target=_blank>Banco Central</a></p>";
+            
+            //var_dump($_GET) -> mostra todos os dados; $_REQUEST -> Junção do $_GET / $_POST / $_COOKIES
         ?>
 
         <button onclick="javascript:window.location.href='index.html'">&larr; Voltar</button>
