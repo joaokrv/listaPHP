@@ -34,12 +34,12 @@
         <h2>Estrutura da divisão</h2>
         <?php
             // Verificação se o número não é nulo.
-            if ($dividendo == null || $divisor == null || $divisor == 0) {
-                echo "<h3 style='color: red;'>Erro: Insira um valor válido (divisor ≠ 0)!</ h3>";
-            } else {
+            if ($dividendo != null || $divisor != null) {
                 // Cálculos
                 $quociente = intdiv($dividendo, $divisor);
                 $resto = $dividendo % $divisor;
+            } else {
+                echo "<h3 style='color: red;'>Erro: Insira um valor válido (divisor ≠ 0)!</ h3>";
             }
         ?>
 
