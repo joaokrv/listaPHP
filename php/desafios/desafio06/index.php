@@ -42,7 +42,7 @@
             <input type="number" name="salario" id="salario" min="0" step="0.01" placeholder="0.00" require>
             <p>Considerando o salário mínimo como <strong
                     style='font-size: 20px;'><?= numfmt_format_currency($padrao,$salario_minimo, "BRL") ?></strong> de
-                acordo com o <a href="https://dadosabertos.bcb.gov.br/">Banco Central</a>, na data do dia <?=$data_ref?>
+                acordo com o <a href="https://dadosabertos.bcb.gov.br/" target=_blank>Banco Central</a>, na data do dia <?=$data_ref?>
             </p>
             <input type="submit" value="Calcular">
         </form>
