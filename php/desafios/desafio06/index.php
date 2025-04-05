@@ -23,16 +23,18 @@
         <!-- API que busca o salário atual de acordo com o Banco Central -->
         <?php  
 
+            // URL da API
             $url = "https://api.bcb.gov.br/dados/serie/bcdata.sgs.1619/dados/ultimos/1?formato=json";
+
+            // Decodifica a URL da API
             $decode = json_decode(file_get_contents($url), true);
-            
+
+            // Busca os valores na API
             $salario_minimo = $decode[0]['valor'];
             $data_ref = $decode[0]['data'];
 
             // Formata o valor convertido para pt_BR
             $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
-
-
         ?>
 
         <h1>Informe seu salário</h1>
@@ -40,13 +42,11 @@
         <form action=" <?= $_SERVER['PHP_SELF']?> " method="get">
             <label for="salario">Salário (R$)</label>
             <input type="number" name="salario" id="salario" min="0" step="0.01" placeholder="0.00" require>
-            <p>Considerando o salário mínimo como <strong
-                    style='font-size: 20px;'><?= numfmt_format_currency($padrao,$salario_minimo, "BRL") ?></strong> de
-                acordo com o <a href="https://dadosabertos.bcb.gov.br/" target=_blank>Banco Central</a>, na data do dia <?=$data_ref?>
-            </p>
+            <p>Considerando o salário mínimo como <strong style='font-size: 20px;'><?= numfmt_format_currency($padrao,$salario_minimo, "BRL") ?></strong> 
+            de acordo com o <a href="https://dadosabertos.bcb.gov.br/" target=_blank>Banco Central</a>, na data do dia <?=$data_ref?></p>
             <input type="submit" value="Calcular">
         </form>
-
+        
     </main>
 
     <section>
@@ -56,6 +56,7 @@
             $numSalarioMin = intdiv($salario, $salario_minimo); 
             $restanteSalario = $salario % $salario_minimo;
 
+            // Para menor ou igual a 1 salário echo no singular, para 2 ou mais, salários no plural
             if ($numSalarioMin == 1) {  
                 echo "Quem recebe um sálario de <strong
                     style='font-size: 20px;'>" . numfmt_format_currency($padrao, $salario, "BRL") . "</strong> ganha <strong>" . $numSalarioMin . " salário mínimo</strong> + " . numfmt_format_currency($padrao, $restanteSalario, "BRL");
