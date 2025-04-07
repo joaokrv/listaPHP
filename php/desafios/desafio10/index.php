@@ -26,7 +26,7 @@
 
             <!-- Campo para inserir o preço do produto -->
             <label for="valor">Preço do Produto (R$)</label>
-            <input type="number" name="valor" id="valor" min="0" value="<?=$valor?>" required>
+            <input type="number" name="valor" id="valor" min="0" value="<?=$valor?>" step="0.01" required>
 
             <!-- Slider de porcentagem com valor dinâmico atualizado via JS -->
             <label for="porc"> Qual será o percentual de reajuste? (<span id="valorPorc"> <?=$porcentagem?> </span>%)
