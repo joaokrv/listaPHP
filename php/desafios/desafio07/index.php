@@ -19,6 +19,7 @@
     <main>
         <h1>Calculadora de raiz</h1>
 
+        <!-- Formulário retroalimentado (action chama a própria página) -->
         <form action=" <?= $_SERVER['PHP_SELF']?> " method="get">
             <label for="num">Número</label>
             <input type="number" name="num" id="num" min="0" value="<?=$valor?>" require>
