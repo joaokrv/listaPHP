@@ -24,10 +24,11 @@
         <!-- Criando Formulario -->
         <form action=" <?= $_SERVER['PHP_SELF']?> " method="get">
             <label for="anoNasc">Em que ano você nasceu?</label>
-            <input type="number" name="anoNasc" id="anoNasc" min="1900" max="<?=$anoAtual?>" value="<?=$anoNasc?>"
-                require>
+            <input type="number" name="anoNasc" id="anoNasc" min="1900" max="<?=$anoAtual?>" value="<?=$anoNasc?>" required>
+            
             <label for="anoEsc">Quer saber sua idade em que ano? (Atualmente estamos em <?=$anoAtual?>)</label>
-            <input type="number" name="anoEsc" id="anoEsc" min="1900" value="<?=$anoEsc?>" require>
+            <input type="number" name="anoEsc" id="anoEsc" min="1900" value="<?=$anoEsc?>" required>
+            
             <input type="submit" value="Calcular">
         </form>
 
