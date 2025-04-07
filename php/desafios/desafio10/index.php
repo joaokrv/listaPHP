@@ -32,7 +32,7 @@
             <label for="porc"> Qual será o percentual de reajuste? (<span id="valorPorc"> <?=$porcentagem?> </span>%)
             </label>
             <input type="range" id="porc" name="porc" min="0" max="100" value="<?=$porcentagem?>" step="1" required
-                oninput="atualizarValor(this.value)"> <!-- Chama função JS ao mover o slider -->
+            oninput="atualizarValor(this.value)"> <!-- Chama função JS ao mover o slider -->
 
             <!-- Botão de envio -->
             <input type="submit" value="Calcular">
