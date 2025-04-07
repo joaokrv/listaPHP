@@ -20,8 +20,9 @@
     ?>
 
     <main>
-        <h1>Médias </h1>
+        <h1>Calculador de Médias</h1>
 
+        <!-- Formulário retroalimentado (action chama a própria página) -->
         <form action=" <?= $_SERVER['PHP_SELF']?> " method="get">
             <label for="num">Primeiro valor:</label>
             <input type="number" name="num1" id="num1" min="0" value="<?=$valor1?>" require>
