@@ -1,4 +1,14 @@
-<!-- Quarto exercicio, aqui aprendemos a utilizar o comando var_dump( ), assim como a maneira que as variaveis e tipos funcionam em PHP -->
+<!-- 
+    Exercício 03 — Tipos Primitivos e var_dump() em PHP
+    Neste exercício aprendemos como funcionam os **tipos primitivos** em PHP (int, float, string, etc),
+    além de como visualizar o tipo e valor de uma variável com a função `var_dump()`.
+
+    Também foi revisado o uso de prefixos numéricos:
+    - 0x = Hexadecimal
+    - 0b = Binário
+    - 0  = Octal
+    - e  = Potência de 10 (ex: 3e2 = 3 × 10² = 300)
+-->
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -11,19 +21,17 @@
 
 <body>
     <h1>Teste de tipos primitivos</h1>
+
     <?php 
-        // 0x = Hexadecimal
-        // 0b = Binário
-        // 0 = Octal
-        // e = Potencia de 10, ex.: 3e2 = 300. 3x10(2).
-        
+        // Exemplo de variável com valor inteiro
         $num = 300;
-        echo "<p>Valor da variavel é $num</p>";
+        echo "<p>Valor da variável é $num</p>";
 
+        // Demonstração da função var_dump()
         $v = 320;
-        //var_dump($v);
+        // var_dump($v); -> Mostra tipo e valor da variável
 
-        echo "<p>O comando var_dump mostra a variavel dessa forma: int(320)</p>";
+        echo "<p>O comando var_dump mostra a variável dessa forma: int(320)</p>";
     ?>
 </body>
 

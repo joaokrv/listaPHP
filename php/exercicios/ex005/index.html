@@ -1,28 +1,42 @@
+<!-- 
+    Exercício 05 — Formulários e Integração com PHP
+    Neste exercício, foi criado um pequeno site com formulário utilizando HTML, CSS e PHP.
+    O objetivo é capturar o nome, sobrenome e idade do usuário e enviar esses dados para um arquivo PHP.
+    Vimos também o uso do método GET, como passar parâmetros pela URL e como recuperar os dados no PHP.
+-->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio 5 - Formularios</title>
+    <title>Exercício 5 - Formulários</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     
     <header>
-        <h1>Formulario em PHP</h1><hr>
+        <h1>Formulário em PHP</h1><hr>
         <h2 id="apresente">Apresente-se:</h2><br>
     </header>
     
     <section>
+        <!-- 
+            Este formulário utiliza o método GET e envia os dados para o arquivo "cad.php".
+            Os campos "nome", "sobrenome" e "idade" serão capturados no PHP via $_GET.
+        -->
         <form action="cad.php" method="get">
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome">
+
             <label for="sobrenome">Sobrenome:</label>
             <input type="text" name="sobrenome" id="sobrenome">
+
             <label for="idade">Idade:</label>
             <input type="number" name="idade" id="idade" min="0" max="110">
+
             <input type="submit" value="Enviar">
         </form>
     </section>

@@ -1,20 +1,31 @@
-<!-- No sexto exercicio, vi a respeito das SuperGlobais e como funcionam, todos seus metodos e funcionalidades diferentes. -->
+<!-- 
+    Exercício 06 - Superglobais em PHP (Parte 1)
+    Este arquivo HTML contém um formulário que envia dados via método POST,
+    além de anexar parâmetros na URL com GET para estudo das superglobais.
+-->
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio PHP</title>
+    <title>Exercício PHP</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
+        <!-- 
+            Formulário que envia dados:
+            - via GET: na URL (turno e modelo)
+            - via POST: os campos 'usu' e 'senha'
+        -->
         <form action="superglobais.php?turno=Tarde&modelo=Estagio" method="post">
             <label for="usu">Usuário</label>
             <input type="text" name="usu" id="usu" required>
+
             <label for="senha">Senha</label>
             <input type="password" name="senha" id="senha" required>
+
             <input type="submit" value="Entrar">
         </form>
     </main>

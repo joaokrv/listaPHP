@@ -1,6 +1,8 @@
-<!-- Sexto exercicio, neste exercicio vamos ver o primeiro site de fato, aqui existe um arquivo CSS, HTML e um PHP. 
-Neles foram configurados para que o usuário digite seu nome, Sobrenome e Idade possuindo um pequeno controle de excessões. 
-Além disso, vimos de uma maneira melhor como puxar uma informação de um HTML, para o PHP e utilizá-la. -->
+<!-- 
+    Processamento do Formulário (cad.php)
+    Este arquivo recebe os dados enviados via GET a partir do formulário HTML e processa as informações.
+    Inclui um pequeno controle de exceções utilizando o operador de coalescência nula (??) para tratar valores inválidos ou não preenchidos.
+-->
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,19 +17,25 @@ Além disso, vimos de uma maneira melhor como puxar uma informação de um HTML,
 <body>
 
     <header>
-        <h1>Resultado do processamento</h1>
+        <h1>Resultado do Processamento</h1>
     </header>
 
     <main>
         <?php 
-           $nome = $_GET["nome"] ?? "Nome invalido ";
-           $sobrenome = $_GET["sobrenome"] ?? "Sobrenome invalido";
-           $idade = $_GET["idade"] ?? "Idade invalida";
-           
-           echo "<p>É muito bom te conhecer <b>$nome $sobrenome</b>, você tem <b>$idade</b> anos mesmo? <br>Esse foi o meu site/formulário. ";
+           // Capturando os dados via GET com fallback caso estejam ausentes
+           $nome = $_GET["nome"] ?? "Nome inválido";
+           $sobrenome = $_GET["sobrenome"] ?? "Sobrenome inválido";
+           $idade = $_GET["idade"] ?? "Idade inválida";
 
-           //var_dump($_GET) -> mostra todos os dados; $_REQUEST -> Junção do $_GET / $_POST / $_COOKIES
+           // Exibição da mensagem personalizada com os dados do usuário
+           echo "<p>É muito bom te conhecer <b>$nome $sobrenome</b>, você tem <b>$idade</b> anos mesmo? <br>Esse foi o meu site/formulário.</p>";
+
+           // Comentários úteis para depuração:
+           // var_dump($_GET) -> mostra todos os dados enviados pela URL
+           // $_REQUEST -> junção de $_GET, $_POST e $_COOKIE
         ?>
+
+        <!-- Botão para voltar à página anterior -->
         <p><a href="javascript:window.location.href='index.html'">Voltar para página anterior</a></p>
     </main>
 
