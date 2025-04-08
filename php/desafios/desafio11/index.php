@@ -21,7 +21,6 @@
         // Recebe os dados enviados via método GET e armazena em variáveis
         // Se nada for enviado, os valores padrão são 0
         $segundos = $_GET ['sec'] ?? 0;
-        $porcentagem = $_GET ['porc'] ?? 0;
     ?>
 
     <main>
