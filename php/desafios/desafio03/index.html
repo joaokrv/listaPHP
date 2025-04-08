@@ -1,0 +1,46 @@
+<!-- 
+    Desafio 3 - Conversor de Moedas
+
+    Proposta: Criar um site que simula a conversão de Reais (BRL) para Dólares (USD).
+    O usuário insere quanto tem na carteira e, após o envio via método GET, 
+    é redirecionado para uma segunda página (resposta.php) que realiza e exibe a conversão.
+
+    O campo de entrada aceita valores com casas decimais e substitui automaticamente vírgulas por pontos,
+    garantindo a formatação correta para o PHP.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 03 - PHP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <header>
+        <h1>Formulario em PHP</h1><hr>
+        <h2 id="apresente">Conversor de moedas<br></h2><br>
+    </header>
+    
+    <section>
+        <form action="resposta.php" method="get">
+            <label for="valor">Quantos R$ tem na sua carteira?</label>
+            <input type="text" name="valor" id="valor" min="0" step="0.01" placeholder="0.00" required>
+            <input type="submit" value="Converter">
+        </form>
+    </section>
+
+    <!--Substitui vírgula por ponto-->
+    <script>
+        document.getElementById('valor').addEventListener('input', function () {
+            this.value = this.value.replace(',', '.'); 
+        });
+    </script>
+
+</body>
+
+</html>

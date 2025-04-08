@@ -1,0 +1,42 @@
+<!-- 
+    Desafio 2 - Gerador de Número Aleatório
+
+    Proposta: Criar um site onde o usuário digita dois números inteiros (inicial e final),
+    e o sistema gera um número aleatório dentro desse intervalo.
+
+    Funcionalidades implementadas:
+    - Validação dos dados recebidos via GET
+    - Geração de número aleatório com base nos valores informados
+    - Exibição do intervalo e do número sorteado
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 02 - PHP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <header>
+        <h1>Formulario em PHP</h1><hr>
+        <h2 id="apresente">Sorteador de Números<br>Escolha o número inicial e final</h2><br>
+    </header>
+    
+    <section>
+        <form action="resposta.php" method="get">
+            <label for="num1">Numero Inicial</label>
+            <input type="number" name="num1" id="num1" required>
+            <label for="num2">Numero Final</label>
+            <input type="number" name="num2" id="num2" required>
+            <input type="submit" value="Sortear">
+        </form>
+    </section>
+
+</body>
+
+</html>
