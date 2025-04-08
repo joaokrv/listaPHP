@@ -45,16 +45,16 @@ localhost/php/<br>
 
 # 🎯 Objetivo
 
-### Aprender e praticar PHP com exercícios práticos.
+- Aprender e praticar PHP com exercícios práticos.
 
-### Acompanhar meu progresso na linguagem.
+- Acompanhar meu progresso na linguagem.
 
-### Compartilhar soluções para ajudar outras pessoas.
+- Compartilhar soluções para ajudar outras pessoas.
 
 # 🔗 Recursos Úteis
 
-### 📺 Playlist do Curso: [Curso em Vídeo - PHP](https://www.youtube.com/playlist?list=PLHz_AreHm4dlFPrCXCmd5g92860x_Pbr_)
+- 📺 Playlist do Curso: [Curso em Vídeo - PHP](https://www.youtube.com/playlist?list=PLHz_AreHm4dlFPrCXCmd5g92860x_Pbr_)
 
-### 📘 Documentação Oficial do PHP: [php.net](https://www.php.net/)
+- 📘 Documentação Oficial do PHP: [php.net](https://www.php.net/)
 
-### 🛠️ Baixar XAMPP: [Apache Friends](https://www.apachefriends.org/)
+- 🛠️ Baixar XAMPP: [Apache Friends](https://www.apachefriends.org/)
